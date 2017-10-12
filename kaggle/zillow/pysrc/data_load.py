@@ -23,6 +23,7 @@ class Load(object):
             # rename
             name_map_dict = dict(zip(self.featinfo.Feature, self.featinfo.map_name))
             feat.columns = map(lambda x: name_map_dict[x], feat.columns)
+            feat = feat.drop('G_fips', axis=1)
             print('properties datashape: %d X %d ,cost time: %.2fs'%(feat.shape[0], feat.shape[1], time.time() - t1))
             return feat
         else:
