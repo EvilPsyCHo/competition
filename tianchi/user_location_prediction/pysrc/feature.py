@@ -1,7 +1,8 @@
 
-import numpy as np
+
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.decomposition import PCA
 
 ## input sample
 def extract_space_feat(df):
@@ -22,8 +23,14 @@ def extract_time_feat(df):
 ## input sample_wifi
 
 def extract_wifi_power(df):
+
     wifi_power = pd.pivot_table(df, index='sample_id', columns='wifi_id', values='signal_power').fillna(-1).reset_index(drop=True).values
+    pca = PCA(n_components=int(wifi_power.shape[1]/10))
+    wifi_power = pca.fit_transform(wifi_power)
     return wifi_power
 
 def extract_wifi_flag(df):
-    wifi_flag = pd.pivot_table(df, index='sample_id', columns='wifi_id', values='signal_flag')
+    wifi_flag = pd.pivot_table(df, index='sample_id', columns='wifi_id', values='signal_flag').fillna(-1).reset_index(drop=True).values
+    pca = PCA(n_components=int(wifi_flag.shape[1] / 10))
+    wifi_flag = pca.fit_transform(wifi_flag)
+    return wifi_flag
