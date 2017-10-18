@@ -52,8 +52,8 @@ def preprocessing():
                         columns=['sample_id', 'wifi_id', 'signal_power', 'signal_flag'])
 
     scaler_power = MinMaxScaler()
-    sample_wifi['signal_power'] = scaler_power.fit_transform(sample_wifi.signal_power.values.reshape(-1,1))
-    sample_wifi['signal_flag'] = sample_wifi['signal_flag'].apply(lambda x: 1 if x == 'true' else 0)
+    sample_wifi['signal_power'] = scaler_power.fit_transform(sample_wifi.signal_power.values.reshape(-1,1)) + 0.1
+    sample_wifi['signal_flag'] = sample_wifi['signal_flag'].apply(lambda x: 1.0 if x == 'true' else 0.1)
     sample_wifi.to_csv('./sample_wifi.csv', index=None)
 
 if __name__ == '__main__':
