@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ef3fbd-62b5-4491-b28e-3a2e823f14a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/.ipynb_checkpoints/LR + basefeature-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/LR + basefeature.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/baseline.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/feature/space_feat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/feature/time_feat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/feature/wifi_feat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/gen_train_test_data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/load_data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/model/LR.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/preprocessing_script.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/__init__.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/feature/__init__.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pycode/model/__init__.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/zhihu_public_code.iml" afterPath="$PROJECT_DIR$/.idea/zhihu_public_code.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/DEA.ipynb" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/DEA.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +28,8 @@
       <file leaf-file-name="feature.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+            <state relative-caret-position="450">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="e#1#19#0" expanded="true" />
               </folding>
@@ -245,8 +228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        <state relative-caret-position="450">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
             <element signature="e#1#19#0" expanded="true" />
           </folding>

@@ -22,7 +22,7 @@ def extract_time_feat(df):
 ## input sample_wifi
 
 def extract_wifi_power(df):
-    wifi_power = pd.pivot_table(df, index='sample_id', columns='wifi_id', values='signal_power').fillna(-1).drop('sample_id', axis=1).values
+    wifi_power = pd.pivot_table(df, index='sample_id', columns='wifi_id', values='signal_power').fillna(-1).reset_index(drop=True).values
     return wifi_power
 
 def extract_wifi_flag(df):
