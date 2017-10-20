@@ -19,6 +19,12 @@ def hour_featext(sample_df, sample_wifi_df, shop_df):
     return feat
 
 
+def spaceloc_featext(sample_df, sample_wifi_df, shop_df):
+    scaler = MinMaxScaler()
+    feat = scaler.fit_transform(sample_df[['lgt','ltt']])
+    return feat
+
+
 def spaceloc_dist_featext(sample_df, sample_wifi_df, shop_df, distfunc='squaer'):
     def squaer_dist(loc1, loc2_list):
         dist = np.power(np.sum(np.power(loc2_list-loc1,2),1),0.5)
@@ -27,12 +33,6 @@ def spaceloc_dist_featext(sample_df, sample_wifi_df, shop_df, distfunc='squaer')
     shop_loc = shop_df[['lgt', 'ltt']].values
     if distfunc=='squaer':
         feat = np.apply_along_axis(squaer_dist, 1, user_loc, **{'loc2_list':shop_loc})
-    return feat
-
-
-def spaceloc_featext(sample_df, sample_wifi_df, shop_df):
-    scaler = MinMaxScaler()
-    feat = scaler.fit_transform(sample_df[['lgt','ltt']])
     return feat
 
 
