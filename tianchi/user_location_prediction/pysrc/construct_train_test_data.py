@@ -1,51 +1,38 @@
-import numpy as np
-import pandas as pd
+from tianchi.user_location_prediction.pysrc.load import *
 from tianchi.user_location_prediction.pysrc.feature import *
 
 
-def construct_batch(sample_df, sample_wifi_df, shop_df):
-    feat_list = []
 
-    weekday_feat = weekday_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(weekday_feat)
 
-    hour_feat = hour_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(hour_feat)
 
-    spaceloc_feat = spaceloc_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(spaceloc_feat)
+class DataGenerator(object):
 
-    spaceloc_dist_feat = spaceloc_dist_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(spaceloc_dist_feat)
+    def __init__(self):
+        self.sample = load_sample()
+        self.shop = load_shop()
+        self.sample_wifi = load_sample_wifi_()
+        self.user_cate = load_user_cate()
+        self.user_price = load_user_price()
 
-    wifi_power_feat = wifi_power_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(wifi_power_feat)
+    def gen_sub_data(self, mall_id):
+        sample_df = self.sample[self.sample.mall_id==mall_id].reset_index(drop=True)
+        shop_df = self.shop[self.shop.mall_id==mall_id].reset_index(drop=True)
+        sample_wifi_df = self.sample_wifi[self.sample_wifi.sample_id.isin(sample_df.sample_id)].reset_index(drop=True)
+        user_cate_df = self.user_cate.copy()
+        user_price_df = self.user_price.copy()
+        return sample_df,shop_df,sample_wifi_df,user_cate_df,user_price_df
 
-    wifi_powerloc_dist_feat = wifi_powerloc_dist_featext(sample_df, sample_wifi_df, shop_df, wifi_power_feat)
-    feat_list.append(wifi_powerloc_dist_feat)
+    def gen_sub_train_test_data(self, feat_name_list, mall_id):
+        sample_df, shop_df, sample_wifi_df, user_cate_df, user_price_df = self.gen_sub_data(mall_id)
+        feat = ext_feat(feat_name_list, sample_df=sample_df, shop_df=shop_df, sample_wifi_df=sample_wifi_df, user_price_df=user_price_df, user_cate_df=user_cate_df)
+        train_idx = sample_df[sample_df.row_id.isnull()].index.tolist()[-1] + 1
 
-    wifi_flag_feat = wifi_flag_featext(sample_df, sample_wifi_df, shop_df)
-    feat_list.append(wifi_flag_feat)
+        train_x = feat[:train_idx]
+        train_y = sample_df[sample_df.row_id.isnull()]['shop_id'].values
+        test_x = feat[train_idx:]
+        test_row_id = list(sample_df[-sample_df.row_id.isnull()]['row_id'].values)
+        return train_x, train_y, test_x, test_row_id
 
-    wifi_flagloc_dist_feat = wifi_flagloc_dist_featext(sample_df, sample_wifi_df, shop_df, wifi_flag_feat)
-    feat_list.append(wifi_flagloc_dist_feat)
-
-    feat = np.concatenate(feat_list, axis=1)
-    train_idx = sample_df[sample_df.row_id.isnull()].index.tolist()[-1] + 1
-
-    train_x = feat[:train_idx]
-    train_y = sample_df[sample_df.row_id.isnull()]['shop_id'].values
-    test_x = feat[train_idx:]
-    test_row_id = list(sample_df[-sample_df.row_id.isnull()]['row_id'].values)
-
-    return train_x, train_y, test_x, test_row_id
-
-if __name__ == '__main__':
-    from tianchi.user_location_prediction.pysrc.load import *
-
-    sample_df = load_sample_test()
-    sample_wifi_df = load_sample_wifi_test()
-    shop_df = load_shop_test()
 
 
 

@@ -56,6 +56,20 @@ def preprocessing():
     sample_wifi['signal_flag'] = sample_wifi['signal_flag'].apply(lambda x: 1.0 if x == 'true' else 0.1)
     sample_wifi.to_csv('./sample_wifi.csv', index=None)
 
+    sample = sample.merge(shop[['shop_id', 'category_id']], on='shop_id', how='left')
+    user_category = sample.groupby(['user_id', 'category_id'])['category_id'].count().unstack().fillna(0).reset_index()
+    user_category.to_csv('./user_category.csv',index=None)
+
+    shop['price_cut'] = pd.cut(shop.price, 10)
+    sample = sample.merge(shop[['shop_id', 'price_cut']], on='shop_id', how='left')
+    user_price = sample.groupby(['user_id', 'price_cut'])['price_cut'].count().unstack().fillna(0)
+    user_price.columns = ['price_level_%d' % i for i in range(10)]
+    user_price = user_price.reset_index()
+    user_price.to_csv('./user_price.csv', index=None)
+
+
+
+
 if __name__ == '__main__':
     preprocessing()
 

@@ -9,23 +9,23 @@ def load_sample():
     df['time'] = pd.to_datetime(df.time)
     return df
 
-def load_sample_wifi():
-    df = pd.read_csv('./sample_wifi.csv')
-    return df
-
 def load_shop():
     df = pd.read_csv('./shop.csv')
     return df
 
-def load_sample_test():
-    df = pd.read_csv('./sample_test.csv')
-    df['time'] = pd.to_datetime(df.time)
-    return df
 
-def load_sample_wifi_test():
-    df = pd.read_csv('./sample_wifi_test.csv')
+def load_sample_wifi_():
+    df = pd.read_csv('./sample_wifi.csv')
     return df
 
 def load_shop_test():
     df = pd.read_csv('./shop_test.csv')
+    return df
+
+def load_user_cate():
+    df = pd.read_csv('./user_category.csv')
+    return df
+
+def load_user_price():
+    df = pd.read_csv('./user_price.csv')
     return df
