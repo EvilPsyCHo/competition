@@ -24,9 +24,9 @@ def preprocessing():
     sample['time'] = pd.to_datetime(sample['time'])
     sample = sample.reset_index(drop=True)
 
-    os.chdir(save_path)
-    sample.to_csv('./sample.csv', index=None)
-    shop.to_csv('./shop.csv', index=None)
+
+
+
 
 
     sample_id_list = []
@@ -52,20 +52,36 @@ def preprocessing():
                         columns=['sample_id', 'wifi_id', 'signal_power', 'signal_flag'])
 
     scaler_power = MinMaxScaler()
-    sample_wifi['signal_power'] = scaler_power.fit_transform(sample_wifi.signal_power.values.reshape(-1,1)) + 0.1
-    sample_wifi['signal_flag'] = sample_wifi['signal_flag'].apply(lambda x: 1.0 if x == 'true' else 0.1)
-    sample_wifi.to_csv('./sample_wifi.csv', index=None)
+    sample_wifi['signal_power'] = scaler_power.fit_transform(sample_wifi.signal_power.values.reshape(-1,1))
+    sample_wifi['signal_flag'] = sample_wifi['signal_flag'].apply(lambda x: 1.0 if x == 'true' else 0.0)
+
+    sample_wifi_flag = sample_wifi[sample_wifi.signal_flag == 1][['sample_id', 'wifi_id']]
+    d = dict(zip(sample_wifi_flag.sample_id, sample_wifi_flag.wifi_id))
+    sample['wifi_connect'] = sample['sample_id'].apply(lambda x: d[x] if x in d else 'None')
+
 
     sample = sample.merge(shop[['shop_id', 'category_id']], on='shop_id', how='left')
     user_category = sample.groupby(['user_id', 'category_id'])['category_id'].count().unstack().fillna(0).reset_index()
-    user_category.to_csv('./user_category.csv',index=None)
+
 
     shop['price_cut'] = pd.cut(shop.price, 10)
     sample = sample.merge(shop[['shop_id', 'price_cut']], on='shop_id', how='left')
     user_price = sample.groupby(['user_id', 'price_cut'])['price_cut'].count().unstack().fillna(0)
     user_price.columns = ['price_level_%d' % i for i in range(10)]
     user_price = user_price.reset_index()
+
+
+    os.chdir(save_path)
+    sample.to_csv('./sample.csv', index=None)
+    print('sample shape:', sample.shape)
+    shop.to_csv('./shop.csv', index=None)
+    print('shop shape:', shop.shape)
     user_price.to_csv('./user_price.csv', index=None)
+    print('user_price shape:', user_price.shape)
+    user_category.to_csv('./user_category.csv', index=None)
+    print('user_category shape:', user_category.shape)
+    sample_wifi.to_csv('./sample_wifi.csv', index=None)
+    print('sample_wifi shape:', sample_wifi.shape)
 
 
 
