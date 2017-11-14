@@ -14,7 +14,7 @@ def load_shop():
     return df
 
 
-def load_sample_wifi_():
+def load_sample_wifi():
     df = pd.read_csv('./sample_wifi.csv')
     return df
 

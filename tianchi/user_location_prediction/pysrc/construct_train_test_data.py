@@ -10,7 +10,7 @@ class DataGenerator(object):
     def __init__(self):
         self.sample = load_sample()
         self.shop = load_shop()
-        self.sample_wifi = load_sample_wifi_()
+        self.sample_wifi = load_sample_wifi()
         self.user_cate = load_user_cate()
         self.user_price = load_user_price()
 
