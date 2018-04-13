@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="a2ef3fbd-62b5-4491-b28e-3a2e823f14a1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/__init__.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/3 全特征.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/.ipynb_checkpoints/EDA version--1.0-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/EDA version--0.8.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/EDA version--1.0.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/data/featureInfo.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/data_clean.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/data_load.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/feature_engineer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/note.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/2_DEA-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/DEA-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/EDA_2-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/badcase analysis-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/baseline1-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/baseline2-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/feature&amp;model selection-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission1-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission2-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission_3-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/2_DEA.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/DEA.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/EDA_2.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/badcase analysis.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/baseline1.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/baseline2.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/feature&amp;model selection.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission1.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission2.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission_3.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/EDA-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/top5 acc-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v1-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v2-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v3-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/EDA.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/top5 acc.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v1.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v2.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v3.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/construct_train_test_data.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/feature.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/load.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/preprocessing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc2/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/record/mall_score" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pytorch/.ipynb_checkpoints/1. Basic-checkpoint.ipynb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pytorch/1. Basic.ipynb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/DEA.ipynb" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/DEA.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/feature&amp;model selection.ipynb" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/notebook/feature&amp;model selection.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" afterPath="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" afterPath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb" afterPath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,15 +63,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="feature.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="0" />
             </state>
           </provider>
         </entry>
@@ -59,10 +99,11 @@
         <option value="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" />
         <option value="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
         <option value="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/v1.py" />
+        <option value="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="5">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
     <option name="y" value="24" />
     <option name="width" value="1851" />
@@ -90,33 +131,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="zhihu_public_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihu_public_code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhihu_public_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihu_public_code" type="462c0819:PsiDirectoryNode" />
-              <item name="tianchi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhihu_public_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihu_public_code" type="462c0819:PsiDirectoryNode" />
-              <item name="tianchi" type="462c0819:PsiDirectoryNode" />
-              <item name="user_location_prediction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhihu_public_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihu_public_code" type="462c0819:PsiDirectoryNode" />
-              <item name="tianchi" type="462c0819:PsiDirectoryNode" />
-              <item name="user_location_prediction" type="462c0819:PsiDirectoryNode" />
-              <item name="pysrc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zhihu_public_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zhihu_public_code" type="462c0819:PsiDirectoryNode" />
-              <item name="tianchi" type="462c0819:PsiDirectoryNode" />
-              <item name="user_location_prediction" type="462c0819:PsiDirectoryNode" />
-              <item name="pysrc2" type="462c0819:PsiDirectoryNode" />
+              <item name="competition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="competition" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -180,19 +196,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="24" width="1851" height="1056" extended-state="5" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="803" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18908697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3590844" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27789474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34340045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27789474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -213,130 +228,58 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="55" column="104" lean-forward="false" selection-start-line="55" selection-start-column="104" selection-end-line="55" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" />
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/v1.py" />
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/sample_rebalance.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/v1.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
+    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
+    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/3 全特征.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="48" />
+    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/Kaggle-Titanic/top4%code.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="14" />
+    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="48" column="55" lean-forward="true" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py">
+    <entry file="file://$PROJECT_DIR$/Kaggle-Zillow/pysrc/feature_engineer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/sample_rebalance.py" />
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="55" column="104" lean-forward="false" selection-start-line="55" selection-start-column="104" selection-end-line="55" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/load.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/v1.py" />
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
