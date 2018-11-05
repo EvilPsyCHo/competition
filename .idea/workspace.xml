@@ -2,58 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ef3fbd-62b5-4491-b28e-3a2e823f14a1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/3 全特征.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/.ipynb_checkpoints/EDA version--1.0-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/EDA version--0.8.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/EDA/EDA version--1.0.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/data/featureInfo.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/data_clean.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/data_load.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Kaggle-Zillow/pysrc/feature_engineer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/note.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/2_DEA-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/DEA-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/EDA_2-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/badcase analysis-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/baseline1-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/baseline2-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/feature&amp;model selection-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission1-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission2-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/.ipynb_checkpoints/submission_3-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/2_DEA.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/DEA.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/EDA_2.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/badcase analysis.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/baseline1.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/baseline2.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/feature&amp;model selection.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission1.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission2.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook/submission_3.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/EDA-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/top5 acc-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v1-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v2-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/.ipynb_checkpoints/v3-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/EDA.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/top5 acc.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v1.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v2.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/notebook2/v3.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/construct_train_test_data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/feature.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/load.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc/preprocessing.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/pysrc2/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Tianchi-User-Location-Forcast/record/mall_score" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pytorch/.ipynb_checkpoints/1. Basic-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pytorch/1. Basic.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" afterPath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb" afterPath="$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb" />
+      <change afterPath="$PROJECT_DIR$/attention/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="0" />
+              <selected id="8" />
             </state>
           </provider>
         </entry>
@@ -103,30 +53,21 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="24" />
-    <option name="width" value="1851" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="160" />
+    <option name="y" value="131" />
+    <option name="width" value="1149" />
+    <option name="height" value="654" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -134,17 +75,20 @@
               <item name="competition" type="b2602c69:ProjectViewProjectNode" />
               <item name="competition" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="competition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="competition" type="462c0819:PsiDirectoryNode" />
+              <item name="attention" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Task-Oriented-Chatbot" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -158,8 +102,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.preprocessing">
+  <component name="RunManager">
     <configuration name="preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="zhihu_public_code" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -170,20 +115,20 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="zhihu_public_code" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
     </configuration>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.preprocessing" />
+      <list>
+        <item itemvalue="Python.preprocessing" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -196,26 +141,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="803" extended-state="6" />
+    <frame x="160" y="131" width="1149" height="654" extended-state="0" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3590844" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27789474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34340045" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.48049647" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27789474" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.34340045" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -225,9 +170,15 @@
     <breakpoint-manager>
       <option name="time" value="4" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/preprocessing.py" />
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
@@ -247,13 +198,7 @@
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc2/v1.py" />
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/construct_train_test_data.py" />
     <entry file="file://$PROJECT_DIR$/tianchi/user_location_prediction/pysrc/feature.py" />
-    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/3 全特征.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/3 全特征.ipynb" />
     <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/Tensorflow_Model 1 无文本类特征.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -268,18 +213,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Kaggle-Zillow/pysrc/feature_engineer.py" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Kaggle-Mercari-Price-Forcast/TensorFlow Model 2 多种rnn测试、细节、embedding效果分析.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kaggle-Zillow/pysrc/feature_engineer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <selected id="8" />
         </state>
       </provider>
     </entry>
