@@ -1,6 +1,4 @@
 .idea
-/Tianchi-meinian/data/
-/Jdata/data/origin
-/Jdata/data/preprocessing
 __pycache__
 .ipynb_*
+build
