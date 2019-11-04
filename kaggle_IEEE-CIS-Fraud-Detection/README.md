@@ -79,8 +79,9 @@ A: Yes, all transactions linked to the same payment card which is identified as 
   Some people's models directly put time features into the model will have a lower score, but some time into statistical features have increased.have fun
 - The hour of the day is D9.
 
-## 特征理解
+## 数据处理
 
-
-
-
+- 高缺失
+- 高重复
+- 类别型变量转换
+- 时间
