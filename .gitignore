@@ -1,6 +1,4 @@
-.idea
-__pycache__
-.ipynb_*
-build
+ashrae_data
 *.csv
-*.pkl
+save
+data
