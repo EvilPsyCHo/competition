@@ -20,22 +20,29 @@ import random
 import warnings
 import logging
 import time
+import gc
 warnings.filterwarnings('ignore')
+
+
+# ROR
 
 
 # global config
 TEST = False
-SUBMISSION = True
+SUBMISSION = False
 START_TIME = time.time()
 
-root = Path("/home/zhouzr/project/competition/Kaggle-ASHRAE/save")
-data_path = Path("/home/zhouzr/project/competition/Kaggle-ASHRAE/data/")
+# home path
+# root = Path("/home/zhouzr/project/competition/Kaggle-ASHRAE/save")
+# data_path = Path("/home/zhouzr/project/competition/Kaggle-ASHRAE/data/")
+# raffles path
+root = Path(r"C:\Users\evilp\project\competition\Kaggle-ASHRAE\save")
+data_path = Path(r"C:\Users\evilp\project\competition\Kaggle-ASHRAE\data")
 
 experiment = 'lgb_v1_cv_' + dt.strftime(dt.now(), "%m_%d_%H_%M")
 experiment_path = root / experiment
 experiment_path.mkdir(parents=True, exist_ok=True)
 log_path = experiment_path / "log.txt"
-print(os.path.exists(experiment_path))
 # config logger
 log = logging.Logger('lightgbm cv', level=logging.INFO)
 fmt = logging.Formatter("%(asctime)s - [line:%(lineno)d]: %(message)s")
@@ -54,6 +61,10 @@ train = pd.read_pickle(data_path / 'train.pkl')
 test  = pd.read_pickle(data_path / 'test.pkl')
 weather_train = pd.read_pickle(data_path / 'weather_train.pkl')
 weather_test = pd.read_pickle(data_path / 'weather_test.pkl')
+weather = weather_train.append(weather_test)
+del weather_train, weather_test
+gc.collect()
+
 meta = pd.read_pickle(data_path / 'building_metadata.pkl')
 sample_submission = pd.read_pickle(data_path / 'sample_submission.pkl')
 log.info('success loading data!')
@@ -114,14 +125,41 @@ def lgb_rmsle(y_pred, dataset):
 
 
 # data processing
+def weather_timestamp_aligned(df):
+    locate = {
+        0: {'country': 'US', 'offset': -4},
+        1: {'country': 'UK', 'offset': 0},
+        2: {'country': 'US', 'offset': -7},
+        3: {'country': 'US', 'offset': -4},
+        4: {'country': 'US', 'offset': -7},
+        5: {'country': 'UK', 'offset': 0},
+        6: {'country': 'US', 'offset': -4},
+        7: {'country': 'CAN', 'offset': -4},
+        8: {'country': 'US', 'offset': -4},
+        9: {'country': 'US', 'offset': -5},
+        10: {'country': 'US', 'offset': -7},
+        11: {'country': 'CAN', 'offset': -4},
+        12: {'country': 'IRL', 'offset': 0},
+        13: {'country': 'US', 'offset': -5},
+        14: {'country': 'US', 'offset': -4},
+        15: {'country': 'US', 'offset': -4},
+    }
+
+    site_offset = pd.DataFrame(locate).T.offset.to_dict()
+    site_offset = df.site_id.map(site_offset)
+    df['timestamp'] = df.timestamp + pd.to_timedelta(site_offset, unit='H')
+    return df
+
+
+weather = weather_timestamp_aligned(weather)
 primary_use_encoder = LabelEncoder()
 meta['primary_use'] = primary_use_encoder.fit_transform(meta['primary_use'])
 if use_log1p_target:
     train['meter_reading'] = np.log1p(train['meter_reading'])
 train = train.merge(meta, on='building_id', how='left')
 test = test.merge(meta, on='building_id', how='left')
-train = train.merge(weather_train, on=['site_id', 'timestamp'], how='left')
-test = test.merge(weather_test, on=['site_id', 'timestamp'], how='left')
+train = train.merge(weather, on=['site_id', 'timestamp'], how='left')
+test = test.merge(weather, on=['site_id', 'timestamp'], how='left')
 log.info(f'finish data processing.')
 
 # add feature
