@@ -33,7 +33,26 @@ locate = {
 }
 ```
 
-- 天气数据补全
+- 缺失&零值数据
+
+可视化： https://www.kaggle.com/ganfear/missing-data-and-zeros-visualized 
+
+补全方法： https://www.kaggle.com/juejuewang/handle-missing-values-in-time-series-for-beginners 
+
+
+
 - 数据泄露
 
  https://www.kaggle.com/c/ashrae-energy-prediction/discussion/116773#latest-671028 
+
+ https://www.kaggle.com/gunesevitan/ashrae-ucf-spider-and-eda-full-test-labels 
+
+- 节假日
+
+ https://www.kaggle.com/c/ashrae-energy-prediction/discussion/115256#663029 
+
+ https://www.kaggle.com/c/ashrae-energy-prediction/discussion/113286 
+
+- 外部数据
+
+ https://www.kaggle.com/c/ashrae-energy-prediction/discussion/112841#latest-671680 

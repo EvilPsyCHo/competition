@@ -14,6 +14,7 @@ from sklearn.model_selection import GroupKFold, KFold
 import lightgbm as lgb
 import matplotlib.pyplot as plt
 import seaborn as sns
+import holidays
 from tqdm import tqdm
 from pathlib import Path
 import random
@@ -94,7 +95,7 @@ param = {
         'lambda_l2': 1,
         'seed': seed,
             }
-categorical_features = ['site_id', 'building_id', 'primary_use', 'hour', 'weekday', 'meter',  'wind_direction']
+categorical_features = ['h0', 'primary_use', 'hour', 'weekday', 'meter'] # , 'site_id', 'building_id'
 numerical_features = ['square_feet', 'year_built', 'air_temperature', 'cloud_coverage',
               'dew_temperature', 'precip_depth_1_hr', 'floor_count']
 
@@ -125,8 +126,7 @@ def lgb_rmsle(y_pred, dataset):
 
 
 # data processing
-def weather_timestamp_aligned(df):
-    locate = {
+locate = {
         0: {'country': 'US', 'offset': -4},
         1: {'country': 'UK', 'offset': 0},
         2: {'country': 'US', 'offset': -7},
@@ -145,6 +145,8 @@ def weather_timestamp_aligned(df):
         15: {'country': 'US', 'offset': -4},
     }
 
+
+def weather_timestamp_aligned(df):
     site_offset = pd.DataFrame(locate).T.offset.to_dict()
     site_offset = df.site_id.map(site_offset)
     df['timestamp'] = df.timestamp + pd.to_timedelta(site_offset, unit='H')
@@ -162,7 +164,26 @@ train = train.merge(weather, on=['site_id', 'timestamp'], how='left')
 test = test.merge(weather, on=['site_id', 'timestamp'], how='left')
 log.info(f'finish data processing.')
 
+
+# drop nan
+train = train.query('not (building_id <= 104 & meter == 0 & timestamp <= "2016-05-20")')
+
 # add feature
+
+
+def add_holiday(x):
+    time_range = pd.date_range(start='2015-12-31', end='2019-01-01', freq='h')
+    country_holidays = {'UK': holidays.UK(), 'US': holidays.US(), 'IRL': holidays.Ireland(), 'CAN': holidays.Canada()}
+
+    holiday_mapping = pd.DataFrame()
+    for site in range(16):
+        holiday_mapping_i = pd.DataFrame({'site_id': site, 'timestamp': time_range})
+        holiday_mapping_i['h0'] = holiday_mapping_i['timestamp'].apply(
+            lambda x: x in country_holidays[locate[site]['country']]).astype(int)
+        holiday_mapping = pd.concat([holiday_mapping, holiday_mapping_i], axis=0)
+
+    x = pd.merge(x, holiday_mapping, on=['site_id', 'timestamp'], how='left')
+    return x
 
 
 def transform(x):
@@ -175,6 +196,8 @@ def transform(x):
 
 train = transform(train)
 test = transform(test)
+train = add_holiday(train)
+test = add_holiday(test)
 log.info(f'finish add features.')
 
 
@@ -260,6 +283,7 @@ if SUBMISSION:
                                          for m in models], axis=0)
     sample_submission['meter_reading'] = np.clip(preds, a_min=0, a_max=None)  # clip min at zero
     sample_submission.to_csv(experiment_path / 'submission.csv', index=False)
+    print(sample_submission.shape)
     print(sample_submission.head(10))
 
 
