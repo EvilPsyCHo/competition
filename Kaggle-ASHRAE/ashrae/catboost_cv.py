@@ -1,9 +1,10 @@
-# coding: utf-8
+# encoding: utf-8
 """
-@Author: zhirui zhou
-@Contact: evilpsycho42@gmail.com
-@Time: 2019/11/9 下午9:00
+@author : zhirui zhou
+@contact: evilpsycho42@gmail.com
+@time   : 2019/11/14 11:14
 """
+import catboost as cgb
 import os
 from datetime import datetime as dt
 import pandas as pd
@@ -24,14 +25,11 @@ import time
 import gc
 warnings.filterwarnings('ignore')
 
-
-# ROR
-
-
 # global config
 TEST = False
 SUBMISSION = False
 START_TIME = time.time()
+SEED = 42
 
 # home path
 # root = Path("/home/zhouzr/project/competition/Kaggle-ASHRAE/save")
@@ -44,20 +42,30 @@ experiment = 'lgb_v1_cv_' + dt.strftime(dt.now(), "%m_%d_%H_%M")
 experiment_path = root / experiment
 experiment_path.mkdir(parents=True, exist_ok=True)
 log_path = experiment_path / "log.txt"
+
 # config logger
-log = logging.Logger('lightgbm cv', level=logging.INFO)
-fmt = logging.Formatter("%(asctime)s - [line:%(lineno)d]: %(message)s")
-sh = logging.StreamHandler()
-sh.setFormatter(fmt)
-th = logging.FileHandler(filename=str(log_path), encoding='utf-8')
-th.setFormatter(fmt)
-log.addHandler(sh)
-log.addHandler(th)
+
+
+def get_logger():
+    log = logging.Logger('lightgbm cv', level=logging.INFO)
+    fmt = logging.Formatter("%(asctime)s - [line:%(lineno)d]: %(message)s")
+    sh = logging.StreamHandler()
+    sh.setFormatter(fmt)
+    th = logging.FileHandler(filename=str(log_path), encoding='utf-8')
+    th.setFormatter(fmt)
+    log.addHandler(sh)
+    log.addHandler(th)
+    return log
+
+
+log = get_logger()
 log.info(f'experiment: {experiment}')
 log.info(f'experiment_path: {experiment_path}')
 log.info(f'data_path: {data_path}')
 
+
 # load data
+
 train = pd.read_pickle(data_path / 'train.pkl')
 test  = pd.read_pickle(data_path / 'test.pkl')
 weather_train = pd.read_pickle(data_path / 'weather_train.pkl')
@@ -71,7 +79,6 @@ sample_submission = pd.read_pickle(data_path / 'sample_submission.pkl')
 log.info('success loading data!')
 
 # config
-seed = 42
 
 
 def seed_everything(seed):
@@ -79,10 +86,11 @@ def seed_everything(seed):
     np.random.seed(seed)
 
 
+seed_everything(SEED)
 use_log1p_target = True
 n_folds = 2
 
-param = {
+lgb_param = {
         'boosting_type': 'gbdt',
         'objective': 'regression',
         'metric': {'rmse'},
@@ -93,17 +101,30 @@ param = {
         'feature_fraction': 0.8,
         'lambda_l1': 1,
         'lambda_l2': 1,
-        'seed': seed,
+        'seed': SEED,
             }
+
+cgb_params = {
+    'objective': 'RMSE',
+    'iterations': 200,
+    'learning_rate': 0.1,
+    'random_seed': SEED,
+    'reg_lambda': 1.0,
+    'subsample': 0.5,
+    'use_best_model': True,
+    'depth': 6,
+    'min_data_in_leaf': 1,
+    'early_stopping_rounds': 50,  # int
+}
 categorical_features = ['h0', 'primary_use', 'hour', 'weekday', 'meter'] # , 'site_id', 'building_id'
 numerical_features = ['square_feet', 'year_built', 'air_temperature', 'cloud_coverage',
               'dew_temperature', 'precip_depth_1_hr', 'floor_count']
 
 features = numerical_features + categorical_features
 
-log.info(f'seed: {seed}, use_log1p_target: {use_log1p_target}, n_folds: {n_folds}')
+log.info(f'seed: {SEED}, use_log1p_target: {use_log1p_target}, n_folds: {n_folds}')
 log.info(f'features: {features}')
-log.info(f'model params: {param}')
+log.info(f'lgb params: {lgb_param}, cgb params: {cgb_params}')
 
 
 # metrics
@@ -201,8 +222,8 @@ test = add_holiday(test)
 log.info(f'finish add features.')
 
 
-# cv test
-def cv(df, features, categorical_features, n_folds, param, verbose=50):
+# cgb cv
+def cgb_cv(df, features, categorical_features, n_folds, param):
     kf = GroupKFold(n_splits=n_folds)
     group_map = dict(zip(np.arange(1, 13),
                          pd.cut(np.arange(1, 13), n_folds, labels=np.arange(n_folds))))
@@ -216,16 +237,9 @@ def cv(df, features, categorical_features, n_folds, param, verbose=50):
         train_X, train_y = df[features].iloc[train_index], df['meter_reading'].iloc[train_index]
         val_X, val_y = df[features].iloc[val_index], df['meter_reading'].iloc[val_index]
 
-        lgb_train = lgb.Dataset(train_X, train_y, categorical_feature=categorical_features)
-        lgb_eval = lgb.Dataset(val_X, val_y, categorical_feature=categorical_features)
-        gbm = lgb.train(param,
-                        lgb_train,
-                        num_boost_round=500,
-                        valid_sets=(lgb_train, lgb_eval),
-                        early_stopping_rounds=50,
-                        verbose_eval=verbose,
-                        feval=lgb_rmsle,
-                        )
+        cgb_train = cgb.Pool(train_X, train_y, cat_features=categorical_features)
+        cgb_eval = cgb.Pool(val_X, val_y, cat_features=categorical_features)
+        gbm = cgb.train(cgb_train, param, eval_set=cgb_eval, verbose=20)
 
         train_preds = gbm.predict(train_X)
         if use_log1p_target:
@@ -244,13 +258,13 @@ def cv(df, features, categorical_features, n_folds, param, verbose=50):
 
 
 if TEST:
-    train = train.sample(1000, random_state=seed)
-    test = test.sample(1000, random_state=seed)
+    train = train.sample(1000, random_state=SEED)
+    test = test.sample(1000, random_state=SEED)
     sample_submission = sample_submission.loc[test.index]
     print(train.head(10).index)
     print(test.head(10).index)
 
-train_scores, valid_scores, models = cv(train, features, categorical_features, 2, param)
+train_scores, valid_scores, models = cgb_cv(train, features, categorical_features, 2, cgb_params)
 log.info('-' * 40 + 'cv finished!' + '-' * 40)
 log.info('-' * 40 + 'cv finished!' + '-' * 40)
 log.info('-' * 40 + 'cv finished!' + '-' * 40)
