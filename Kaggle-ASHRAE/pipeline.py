@@ -142,9 +142,6 @@ def compress(df, use_float16=False):
 
     return df
 
-
-@time_it
-
 @time_it
 def feature_engineering(x):
     categorical_features = ['building_id', 'meter', 'site_id', 'primary_use', 'hour', 'weekend']
@@ -158,10 +155,10 @@ def feature_engineering(x):
         .median().reset_index().rename(columns={"meter_reading": "site_month_median"})
     x = x.merge(site_month_median, on=['site_id', 'month', 'meter'], how='left')
 
-    # meter month min usage
-    site_month_median = x.groupby(['site_id', 'month', 'meter'])['meter_reading'] \
-        .min().reset_index().rename(columns={"meter_reading": "site_month_min"})
-    x = x.merge(site_month_median, on=['site_id', 'month', 'meter'], how='left')
+    # meter month mean usage
+    # site_month_median = x.groupby(['site_id', 'month', 'meter'])['meter_reading'] \
+    #     .mean().reset_index().rename(columns={"meter_reading": "site_month_mean"})
+    # x = x.merge(site_month_median, on=['site_id', 'month', 'meter'], how='left')
 
     drop = ["timestamp", "sea_level_pressure", "wind_direction",
             "wind_speed", "year_built", "floor_count", "month"]
