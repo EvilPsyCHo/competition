@@ -1,5 +1,6 @@
 ashrae_data
 *.csv
+*.7z
 save
 data
 .idea

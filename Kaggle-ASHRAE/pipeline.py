@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import lightgbm as lgb
 from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import KFold
+from sklearn.model_selection import KFold, GroupKFold
 import datetime as dt
 from pandas.api.types import is_datetime64_any_dtype as is_datetime
 from pandas.api.types import is_categorical_dtype
@@ -19,7 +19,10 @@ import gc
 from pathlib import Path
 
 # DATA_PATH = "../input/ashrae-energy-prediction/"
+SUBMIT = False
+DEBUG = False
 DATA_PATH = Path(r"C:\Users\evilp\project\competition\Kaggle-ASHRAE\data")
+ALL_FEAT = []
 
 
 def time_it(func):
@@ -34,25 +37,68 @@ def time_it(func):
 # data
 @time_it
 def load_data(data_root_path):
-    train_df = compress(pd.read_csv(data_root_path / "train.csv", parse_dates=['timestamp']))
-    test_df = compress(pd.read_csv(data_root_path / 'test.csv', parse_dates=['timestamp']))
-    weather_train = compress(pd.read_csv(data_root_path / "weather_train.csv", parse_dates=['timestamp']))
-    weather_test = compress(pd.read_csv(data_root_path / "weather_test.csv", parse_dates=['timestamp']))
-    building_meta = compress(pd.read_csv(data_root_path / "building_metadata.csv"))
-    return train_df, test_df, weather_train, weather_test, building_meta
+    train_df = pd.read_csv(data_root_path / "train.csv", parse_dates=['timestamp'])
+    test_df = pd.read_csv(data_root_path / 'test.csv', parse_dates=['timestamp'])
+    weather_train = pd.read_csv(data_root_path / "weather_train.csv", parse_dates=['timestamp'])
+    weather_test = pd.read_csv(data_root_path / "weather_test.csv", parse_dates=['timestamp'])
+    building_meta = pd.read_csv(data_root_path / "building_metadata.csv")
+    if DEBUG:
+        print("use debug mode ")
+        return train_df.sample(10000), test_df.sample(10000), weather_train, weather_test, building_meta
+    else:
+        return train_df, test_df, weather_train, weather_test, building_meta
 
 
 def process_meta(x):
     le = LabelEncoder().fit(x.primary_use)
     x['primary_use'] = le.transform(x['primary_use'])
-
     x['square_feet'] = np.log1p(x['square_feet'])
     x['year_built'] = 2016 - x['year_built'] + 1
     return x
 
 
-def process_weather(x):
-    return x
+def process_weather(weather_df):
+    weather_df = weather_df.groupby("site_id").apply(
+        lambda x: x.set_index("timestamp").asfreq("H").drop("site_id", axis=1)).reset_index()
+
+    weather_df["datetime"] = pd.to_datetime(weather_df["timestamp"])
+    weather_df["day"] = weather_df["datetime"].dt.day
+    weather_df["week"] = weather_df["datetime"].dt.week
+    weather_df["month"] = weather_df["datetime"].dt.month
+    weather_df["hour"] = weather_df["datetime"].dt.hour
+
+    # Reset Index for Fast Update
+    weather_df = weather_df.set_index(['site_id', 'week', 'hour'])
+
+    # air temperature
+    air_temperature_filler = pd.DataFrame(weather_df.groupby(['site_id', 'week', 'hour'])['air_temperature'].median(),
+                                          columns=["air_temperature"])
+    weather_df.update(air_temperature_filler, overwrite=False)
+
+    # sea_level_pressure
+    sea_level_filler = weather_df.groupby(['site_id', 'month', 'day'])['sea_level_pressure'].mean()
+    sea_level_filler = pd.DataFrame(sea_level_filler.fillna(method='ffill'), columns=['sea_level_pressure'])
+    weather_df.update(sea_level_filler, overwrite=False)
+
+    # wind direction
+    wind_direction_filler = pd.DataFrame(weather_df.groupby(['site_id', 'month', 'day'])['wind_direction'].mean(),
+                                         columns=['wind_direction'])
+    weather_df.update(wind_direction_filler, overwrite=False)
+
+    # wind speed
+    wind_speed_filler = pd.DataFrame(weather_df.groupby(['site_id', 'month', 'day'])['wind_speed'].mean(),
+                                     columns=['wind_speed'])
+    weather_df.update(wind_speed_filler, overwrite=False)
+
+    # precip_depth_filler
+    precip_depth_filler = weather_df.groupby(['site_id', 'day', 'month'])['precip_depth_1_hr'].mean()
+    precip_depth_filler = pd.DataFrame(precip_depth_filler.fillna(method='ffill'), columns=['precip_depth_1_hr'])
+    weather_df.update(precip_depth_filler, overwrite=False)
+
+    weather_df = weather_df.reset_index()
+    weather_df = weather_df.drop(['datetime', 'day', 'week', 'month', 'hour'], axis=1)
+
+    return weather_df
 
 
 # processing
@@ -97,64 +143,34 @@ def compress(df, use_float16=False):
     return df
 
 
-def fill_weather(weather_df):
-    weather_df = weather_df.groupby("site_id").apply(
-        lambda x: x.set_index("timestamp").asfreq("H").drop("site_id", axis=1)).reset_index()
+@time_it
 
-    weather_df["datetime"] = pd.to_datetime(weather_df["timestamp"])
-    weather_df["day"] = weather_df["datetime"].dt.day
-    weather_df["week"] = weather_df["datetime"].dt.week
-    weather_df["month"] = weather_df["datetime"].dt.month
-    weather_df["hour"] = weather_df["datetime"].dt.hour
-
-    # Reset Index for Fast Update
-    weather_df = weather_df.set_index(['site_id', 'week', 'hour'])
-
-    # air temperature
-    air_temperature_filler = pd.DataFrame(weather_df.groupby(['site_id', 'week', 'hour'])['air_temperature'].median(),
-                                          columns=["air_temperature"])
-    weather_df.update(air_temperature_filler, overwrite=False)
-
-    # sea_level_pressure
-    sea_level_filler = weather_df.groupby(['site_id', 'month', 'day'])['sea_level_pressure'].mean()
-    sea_level_filler = pd.DataFrame(sea_level_filler.fillna(method='ffill'), columns=['sea_level_pressure'])
-    weather_df.update(sea_level_filler, overwrite=False)
-
-    # wind direction
-    wind_direction_filler = pd.DataFrame(weather_df.groupby(['site_id', 'month', 'day'])['wind_direction'].mean(),
-                                         columns=['wind_direction'])
-    weather_df.update(wind_direction_filler, overwrite=False)
-
-    # wind speed
-    wind_speed_filler = pd.DataFrame(weather_df.groupby(['site_id', 'month', 'day'])['wind_speed'].mean(),
-                                     columns=['wind_speed'])
-    weather_df.update(wind_speed_filler, overwrite=False)
-
-    # precip_depth_filler
-    precip_depth_filler = weather_df.groupby(['site_id', 'day', 'month'])['precip_depth_1_hr'].mean()
-    precip_depth_filler = pd.DataFrame(precip_depth_filler.fillna(method='ffill'), columns=['precip_depth_1_hr'])
-    weather_df.update(precip_depth_filler, overwrite=False)
-
-    weather_df = weather_df.reset_index()
-    weather_df = weather_df.drop(['datetime', 'day', 'week', 'month', 'hour'], axis=1)
-
-    return weather_df
-
-
+@time_it
 def feature_engineering(x):
     categorical_features = ['building_id', 'meter', 'site_id', 'primary_use', 'hour', 'weekend']
     # sort values by building_id timestamp?
     x["hour"] = x["timestamp"].dt.hour
     x["weekend"] = x["timestamp"].dt.weekday
+    x["month"] = x['timestamp'].dt.month
 
-    drop = ["timestamp", "sea_level_pressure", "wind_direction", "wind_speed", "year_built", "floor_count"]
+    # meter month median usage
+    site_month_median = x.groupby(['site_id', 'month', 'meter'])['meter_reading']\
+        .median().reset_index().rename(columns={"meter_reading": "site_month_median"})
+    x = x.merge(site_month_median, on=['site_id', 'month', 'meter'], how='left')
+
+    # meter month min usage
+    site_month_median = x.groupby(['site_id', 'month', 'meter'])['meter_reading'] \
+        .min().reset_index().rename(columns={"meter_reading": "site_month_min"})
+    x = x.merge(site_month_median, on=['site_id', 'month', 'meter'], how='left')
+
+    drop = ["timestamp", "sea_level_pressure", "wind_direction",
+            "wind_speed", "year_built", "floor_count", "month"]
     x = x.drop(drop, axis=1)
     gc.collect()
     return x, categorical_features
 
-
-
 # train
+@time_it
 def kfold_train(model_params, features, target, n_splits, categorical_features, seed):
     kf = KFold(n_splits=n_splits, random_state=seed, shuffle=False)
     models = []
@@ -188,20 +204,26 @@ def plot_importance(models):
         lgb.plot_importance(model)
         plt.show()
 
-
-def predict(models, features):
-    results = []
+@time_it
+def predict(models, features, ensemble=1):
+    results = np.zeros(features.shape[0])
     for model in models:
-        if not results:
-            results = np.expm1(model.predict(features, num_iteration=model.best_iteration)) / len(models)
-        else:
-            results += np.expm1(model.predict(features, num_iteration=model.best_iteration)) / len(models)
+        for i in range(ensemble):
+            results += np.expm1(model.predict(features, num_iteration=model.best_iteration-i)) / (len(models) + ensemble -1)
         del model
         gc.collect()
     return results
 
 
+def submit(pred, row_id):
+    assert len(pred) == 41697600 == len(row_id)
+    pred = np.clip(pred, a_min=0, a_max=None)
+    submisstion = pd.DataFrame({"row_id": row_id,
+                                "meter_reading": pred})
+    submisstion.to_csv("submission.csv", index=False)
+
 DATA_PATH = Path(r"C:\Users\evilp\project\competition\Kaggle-ASHRAE\data")
+
 params = {
     "objective": "regression",
     "boosting": "gbdt",
@@ -214,19 +236,39 @@ params = {
 
 train_df, test_df, weather_train, weather_test, building_meta = load_data(DATA_PATH)
 
+building_meta = process_meta(building_meta)
 weather = pd.concat([weather_train, weather_test]).reset_index(drop=True)
+del weather_test; del weather_train
+gc.collect()
+weather = process_weather(weather)
+weather = compress(weather)
+
+train_df = train_df[~((train_df['building_id'] == 1099) & (train_df['meter'] ==2))].reset_index(drop=True)
+train_df = train_df.query('not (building_id <= 104 & meter == 0 & timestamp <= "2016-05-20")').reset_index(drop=True)
+train_df = compress(train_df)
+test_df = compress(test_df)
 
 train_target = np.log1p(train_df.meter_reading)
-train_df.drop('meter_reading', axis=1, inplace=True)
 row_id = test_df.row_id
 test_df.drop('row_id', axis=1, inplace=True)
 
 train_df = train_df.merge(building_meta, on='building_id', how='left').merge(weather, on=['site_id', 'timestamp'], how='left')
 test_df = test_df.merge(building_meta, on='building_id', how='left').merge(weather, on=['site_id', 'timestamp'], how='left')
 
+del weather
+gc.collect()
+
 feature, categorical_feature = feature_engineering(train_df)
-
+feature.drop('meter_reading', axis=1, inplace=True)
 models, score = kfold_train(params, feature, train_target, 3, categorical_feature, None)
+print(f'mean cv score: {np.mean(score):.3f}')
 
-# https://www.kaggle.com/aitude/ashrae-kfold-lightgbm-without-leak-1-08/data
-# https://www.kaggle.com/purist1024/ashrae-simple-data-cleanup-lb-1-08-no-leaks
+plot_importance(models)
+
+if SUBMIT and not DEBUG:
+    print('start predict test set')
+    test_feature, categorical_feature = feature_engineering(test_df)
+    test_pred = predict(models, test_feature)
+
+    print(test_pred[:10])
+    submit(test_pred, row_id)
