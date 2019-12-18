@@ -20,7 +20,7 @@ from pathlib import Path
 
 # DATA_PATH = "../input/ashrae-energy-prediction/"
 SUBMIT = False
-DEBUG = False
+DEBUG = True
 DATA_PATH = Path(r"C:\Users\evilp\project\competition\Kaggle-ASHRAE\data")
 ALL_FEAT = []
 
